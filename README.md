@@ -1,7 +1,8 @@
 ### Student submitted section
+________________________________________________________________________________________________________________________________________
 ## Startup Requirements
-For testing and general modifications be sure to click the green clone or download button at the top right of your screen. Click the download Zip option. From there you may open the zip file and have acess to all nessary files. Double click the index.html and it should apear on you browser for local viewing.
-### Student submitted section complete
+For testing and general modifications be sure to click the green clone or download button at the top right of your screen. Click the download Zip option. From there you may open the zip file and have acess to all nessary files. All of the Jasmine testing code I have written is inside the feedreader.js file inside the jasmine folder, Double click the index.html and it should apear on you browser for local viewing of the feed reader itself and its test results.
+________________________________________________________________________________________________________________________________________
 # Project Overview
 
 In this project you are given a web-based application that reads RSS feeds. The original developer of this application clearly saw the value in testing, they've already included [Jasmine](http://jasmine.github.io/) and even started writing their first test suite! Unfortunately, they decided to move on to start their own company and we're now left with an application with an incomplete test suite. That's where you come in.
