@@ -75,8 +75,7 @@ $(function() {
     		loadFeed(0, done);
     	});
     	it('has entries', function() {
-    		expect($('.feed')).not.toBeNull();
-            expect($('.entry').size()).toBeGreaterThan(1);
+            expect($('.feed .entry').size()).toBeGreaterThan(0);
     	});
     });
 
