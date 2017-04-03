@@ -76,7 +76,7 @@ $(function() {
     	});
     	it('has entries', function() {
     		expect($('.feed')).not.toBeNull();
-            expect($('.feed').children().size()).toBeGreaterThan(1);
+            expect($('.entry').size()).toBeGreaterThan(1);
     	});
     });
 
