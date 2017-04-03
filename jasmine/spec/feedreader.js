@@ -21,7 +21,7 @@ $(function() {
          * allFeeds in app.js to be an empty array and refresh the
          * page?
          */
-        it('are defined', function() {
+        it('is defined', function() {
             expect(allFeeds).toBeDefined();
             expect(allFeeds.length).not.toBe(null);
         });
@@ -32,7 +32,8 @@ $(function() {
         	expect(allFeeds[i].url).toBeDefined();
         	expect(allFeeds[i].url).not.toBeNull();
         	expect(allFeeds[i].url).toContain('http');
-        	};
+            expect(allFeeds[i].url).not.toEqual('');
+        	}
         	
         	
         });
@@ -43,7 +44,8 @@ $(function() {
         	for (var i = 0; i < allFeeds.length; i++) {
         	expect(allFeeds[i].name).toBeDefined();
         	expect(allFeeds[i].name).not.toBeNull();
-        	};
+            expect(allFeeds[i].name).not.toEqual('');
+        	}
         	
         	
         });
@@ -55,7 +57,6 @@ $(function() {
         //Checks the DOM for the value menu-hidden
     	it('starts with a hidden menu', function() {
     		expect($('body').hasClass('menu-hidden')).toBe(true);
-    		expect($('menu-hidden')).toBeDefined();    		
     	});
         //triggers the menu dom manipulation and checks for the corisponding changes to the dom
     	it('has a toggleable menu', function() {
@@ -64,7 +65,7 @@ $(function() {
 
     		$('a.menu-icon-link').trigger('click');
     		expect($('body').hasClass('menu-hidden')).toBe(true);
-    	})
+    	});
 
     });
 
@@ -76,23 +77,24 @@ $(function() {
     	it('has entries', function() {
     		expect($('.feed')).not.toBe(undefined);
     		expect($('.feed')).not.toBeNull();
+            expect($('.entry-link').size()).toBeGreaterThan(1);
     	});
     });
 
     //Loads one of the feeds and tests if changing feeds changes hyperlinks
     describe('Selecting a New Feed', function() {
-    	var prevousContents
+    	var prevousContents;
     	beforeEach(function(done) {
     		loadFeed(0, function() {
     			prevousContents = $('.feed').html();
-    			console.log($('.feed').html());
+    			//console.log($('.feed').html());
     			done();
     		});
     	});
         //Loads a seprate feed to refrence with the last one loaded
     	it('changes feeds', function(done){
     		loadFeed(1, function(){
-                expect($('.feed')[0] !== prevousContents).toBe(true);
+                expect($('.feed').html()).not.toEqual(prevousContents);
                 done();
             });
     	});
